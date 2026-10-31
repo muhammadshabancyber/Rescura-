@@ -1,11 +1,10 @@
-# Rescura-
-# 🛡️ Tafseel — Cyber Incident Recovery Guide
+# 🛡️ Rescura AI Cyber — Cyber Incident Recovery Guide
 
-Tafseel helps ordinary people recover from **hacked accounts, stolen phones, phishing, financial fraud, malware, ransomware and password leaks**. It gives calm, step-by-step advice in **English, Urdu (اردو) and Roman Urdu**, in **Short** or **Detailed** mode.
+Rescura helps ordinary people recover from **hacked accounts, stolen phones, phishing, financial fraud, malware, ransomware and password leaks**. It gives calm, step-by-step advice in **English, Urdu (اردو) and Roman Urdu**, in **Short** or **Detailed** mode.
 
 It is built with **Python**, **Streamlit** and the official **`google-genai`** SDK (Google Gemini Flash).
 
-> Tafseel gives general guidance only. It is not legal, police or bank advice.
+> Rescura gives general guidance only. It is not legal, police or bank advice.
 
 ---
 
@@ -30,7 +29,7 @@ It is built with **Python**, **Streamlit** and the official **`google-genai`** S
 - **Prompt-injection protection**: the user's text is checked for "ignore previous instructions"-style phrases (English, Urdu, Roman Urdu); if found, the AI is skipped and the rule-based plan is still shown. The text is wrapped in delimiters and the AI is told it is untrusted data. The AI's answer must be valid JSON; links, HTML, phone numbers and any sentence that asks for a password/OTP/PIN/CNIC are removed.
 - **Input validation**: length limit (1500 characters), hidden/control characters stripped, Unicode normalised.
 - **Graceful failures**: missing key, missing library, rate limit (429), bad key (401/403), wrong model name (404), timeouts, network errors, server errors (one automatic retry), empty/invalid AI answers → friendly message, and the rule-based plan is always shown.
-- **Quota protection**: at most 10 AI requests per browser session, with a 15-second gap.
+- **Quota protection**: at most 10 AI requests per browser session, with a 5-second gap.
 - **Nothing is stored** by the app: no database, no files, no logging of what you type.
 
 ---
@@ -51,7 +50,7 @@ README.md         this guide
 2. Click **Create API key** and copy it.
 3. Keep it private. **Never** paste it into `app.py`, GitHub, or a chat.
 
-> If you use the free tier, Google's terms may allow it to use submitted content to improve its products. Tafseel hides sensitive details first, but you should still avoid typing anything private. Read Google's current Gemini API terms.
+> If you use the free tier, Google's terms may allow it to use submitted content to improve its products. Rescura hides sensitive details first, but you should still avoid typing anything private. Read Google's current Gemini API terms.
 
 *(You can skip this step. The app still works, in basic mode, without a key.)*
 
@@ -59,7 +58,7 @@ README.md         this guide
 
 1. Create a free account at **https://github.com** (or sign in).
 2. Click the **+** at the top right → **New repository**.
-3. Repository name: `tafseel`. Choose **Public**. **Do not** tick "Add a README" (you are uploading your own). Click **Create repository**.
+3. Repository name: `rescura`. Choose **Public**. **Do not** tick "Add a README" (you are uploading your own). Click **Create repository**.
 4. On the new empty page, click the link **uploading an existing file**.
 5. Drag **`app.py`, `requirements.txt` and `README.md`** into the page. They must be in the main folder (not inside another folder).
 6. Scroll down and click **Commit changes**.
@@ -73,7 +72,7 @@ README.md         this guide
 1. Go to **https://share.streamlit.io** and click **Continue with GitHub**. Allow access when asked.
 2. Click **Create app** → **Deploy a public app from GitHub**.
 3. Fill in:
-   - **Repository:** `your-username/tafseel`
+   - **Repository:** `your-username/rescura`
    - **Branch:** `main`
    - **Main file path:** `app.py`
 4. Click **Advanced settings**:
